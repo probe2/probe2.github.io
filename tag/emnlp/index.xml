@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>EMNLP | Jie He</title>
+    <link>/tag/emnlp/</link>
+      <atom:link href="/tag/emnlp/index.xml" rel="self" type="application/rss+xml" />
+    <description>EMNLP</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © 2020 Jie He</copyright><lastBuildDate>Thu, 24 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>EMNLP</title>
+      <link>/tag/emnlp/</link>
+    </image>
+    
+    <item>
+      <title>The Box is in the Pen: Evaluating Commonsense Reasoning in Neural Machine Translation</title>
+      <link>/publication/commonsense/</link>
+      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/commonsense/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
