@@ -1,32 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jie He* | Jie He</title>
+    <title>Jie He</title>
     <link>/author/jie-he/</link>
       <atom:link href="/author/jie-he/index.xml" rel="self" type="application/rss+xml" />
-    <description>Jie He*</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © 2020 Jie He</copyright><lastBuildDate>Thu, 24 Sep 2020 18:46:29 +0800</lastBuildDate>
+    <description>Jie He</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Copyright © 2020 Jie He</copyright>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
-      <title>Jie He*</title>
+      <title>Jie He</title>
       <link>/author/jie-he/</link>
     </image>
-    
-    <item>
-      <title>Evaluate Discourse Cohesion in Pre-trained Language Models</title>
-      <link>/publication/cohesion/</link>
-      <pubDate>Thu, 24 Sep 2020 18:46:29 +0800</pubDate>
-      <guid>/publication/cohesion/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>The Box is in the Pen: Evaluating Commonsense Reasoning in Neural Machine Translation</title>
-      <link>/publication/commonsense/</link>
-      <pubDate>Thu, 24 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>/publication/commonsense/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>
