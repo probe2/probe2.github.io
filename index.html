@@ -6,7 +6,7 @@
   <title>Jie He | PhD Student at University of Edinburgh</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --primary: #2563eb;
@@ -24,7 +24,6 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -45,26 +44,9 @@
       height: 60px;
       display: flex; align-items: center; justify-content: space-between;
     }
-
-    .nav-brand {
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex; gap: 1.8rem; list-style: none;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-muted);
-      font-size: 0.88rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
+    .nav-brand { font-weight: 700; font-size: 1.05rem; color: var(--text); text-decoration: none; }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 0.88rem; font-weight: 500; transition: color 0.2s; }
     .nav-links a:hover { color: var(--primary); }
 
     /* ===== HERO ===== */
@@ -77,423 +59,210 @@
       gap: 3rem;
       align-items: center;
     }
-
-    .hero-text h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      line-height: 1.15;
-      color: var(--text);
-      margin-bottom: 0.4rem;
-    }
-
-    .hero-subtitle {
-      font-size: 1.05rem;
-      color: var(--primary);
-      font-weight: 500;
-      margin-bottom: 1.2rem;
-    }
-
-    .hero-bio {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      max-width: 580px;
-      margin-bottom: 1.6rem;
-    }
-
-    .hero-links {
-      display: flex; flex-wrap: wrap; gap: 0.7rem;
-    }
+    .hero-text h1 { font-size: 2.8rem; font-weight: 700; line-height: 1.15; margin-bottom: 0.4rem; }
+    .hero-subtitle { font-size: 1.05rem; color: var(--primary); font-weight: 500; margin-bottom: 1.2rem; }
+    .hero-bio { color: var(--text-muted); font-size: 0.93rem; max-width: 580px; margin-bottom: 0.9rem; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.2rem; }
 
     .btn {
       display: inline-flex; align-items: center; gap: 0.4rem;
-      padding: 0.5rem 1.1rem;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      text-decoration: none;
-      transition: all 0.2s;
+      padding: 0.5rem 1.1rem; border-radius: 8px;
+      font-size: 0.85rem; font-weight: 500;
+      text-decoration: none; transition: all 0.2s;
       border: 1.5px solid transparent;
     }
-
-    .btn-primary {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-1px);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--text);
-      border-color: var(--border);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-      transform: translateY(-1px);
-    }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--text); border-color: var(--border); }
+    .btn-outline:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-1px); }
 
     .avatar {
-      width: 170px; height: 170px;
-      border-radius: 50%;
+      width: 170px; height: 170px; border-radius: 50%;
       background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
       display: flex; align-items: center; justify-content: center;
-      font-size: 4rem;
-      color: white;
-      font-weight: 700;
+      font-size: 4rem; color: white; font-weight: 700;
       box-shadow: 0 8px 32px rgba(37,99,235,0.25);
-      flex-shrink: 0;
+      flex-shrink: 0; overflow: hidden;
     }
 
-    /* ===== BADGE HIGHLIGHT ===== */
-    .award-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: linear-gradient(135deg, #fef3c7, #fde68a);
-      color: #92400e;
-      border: 1px solid #fcd34d;
-      border-radius: 20px;
-      padding: 0.3rem 0.9rem;
-      font-size: 0.82rem;
-      font-weight: 600;
-      margin-bottom: 1.2rem;
-    }
-
-    /* ===== MAIN CONTENT ===== */
-    main {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 2rem 4rem;
-    }
-
+    /* ===== MAIN ===== */
+    main { max-width: 1000px; margin: 0 auto; padding: 0 2rem 4rem; }
     section { margin-bottom: 3.5rem; }
 
     .section-title {
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 1.4rem;
-      padding-bottom: 0.6rem;
+      font-size: 1.35rem; font-weight: 700; color: var(--text);
+      margin-bottom: 1.4rem; padding-bottom: 0.6rem;
       border-bottom: 2px solid var(--primary-light);
       display: flex; align-items: center; gap: 0.6rem;
     }
-
     .section-title .icon {
-      width: 28px; height: 28px;
-      background: var(--primary-light);
-      border-radius: 6px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.9rem;
+      width: 28px; height: 28px; background: var(--primary-light);
+      border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;
     }
 
-    /* ===== RESEARCH INTERESTS ===== */
-    .research-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-
+    /* ===== RESEARCH GRID ===== */
+    .research-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
     .research-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.2rem 1.4rem;
-      box-shadow: var(--shadow);
-      transition: all 0.25s;
-      position: relative;
-      overflow: hidden;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.2rem 1.4rem;
+      box-shadow: var(--shadow); transition: all 0.25s;
+      position: relative; overflow: hidden;
     }
-
     .research-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
       border-radius: var(--radius) var(--radius) 0 0;
     }
-
     .research-card.aug::before { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
     .research-card.rea::before { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
     .research-card.eff::before { background: linear-gradient(90deg, #10b981, #34d399); }
     .research-card.mul::before { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
-
-    .research-card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .research-card h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .research-card p {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
+    .research-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+    .research-card h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .research-card p { font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; }
 
     /* ===== TIMELINE ===== */
-    .timeline { position: relative; }
-
-    .timeline-item {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
+    .timeline-item { display: grid; grid-template-columns: auto 1fr; gap: 1rem; margin-bottom: 1.5rem; }
     .timeline-dot {
-      width: 12px; height: 12px;
-      border-radius: 50%;
-      background: var(--primary);
-      margin-top: 6px;
-      flex-shrink: 0;
-      box-shadow: 0 0 0 3px var(--primary-light);
+      width: 12px; height: 12px; border-radius: 50%; background: var(--primary);
+      margin-top: 6px; flex-shrink: 0; box-shadow: 0 0 0 3px var(--primary-light);
     }
-
     .timeline-content {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.1rem 1.4rem;
-      box-shadow: var(--shadow);
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.1rem 1.4rem; box-shadow: var(--shadow);
     }
+    .timeline-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.3rem; }
+    .timeline-title { font-weight: 600; font-size: 0.95rem; }
+    .timeline-date { font-size: 0.8rem; color: var(--text-muted); white-space: nowrap; margin-left: 0.5rem; flex-shrink: 0; }
+    .timeline-sub { font-size: 0.85rem; color: var(--primary); font-weight: 500; margin-bottom: 0.3rem; }
+    .timeline-desc { font-size: 0.85rem; color: var(--text-muted); }
 
-    .timeline-header {
-      display: flex; justify-content: space-between; align-items: flex-start;
-      margin-bottom: 0.3rem;
-    }
-
-    .timeline-title {
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .timeline-date {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      white-space: nowrap;
-      margin-left: 0.5rem;
-      flex-shrink: 0;
-    }
-
-    .timeline-sub {
-      font-size: 0.85rem;
-      color: var(--primary);
-      font-weight: 500;
-      margin-bottom: 0.3rem;
-    }
-
-    .timeline-desc {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    /* ===== WORK EXPERIENCE ===== */
+    /* ===== COMPANY CARDS ===== */
     .company-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.2rem 1.5rem;
-      box-shadow: var(--shadow);
-      margin-bottom: 1rem;
-      display: flex; gap: 1.2rem; align-items: flex-start;
-      transition: all 0.25s;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.2rem 1.5rem;
+      box-shadow: var(--shadow); margin-bottom: 1rem;
+      display: flex; gap: 1.2rem; align-items: flex-start; transition: all 0.25s;
     }
-
-    .company-card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-hover);
-    }
-
+    .company-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
     .company-logo {
-      width: 46px; height: 46px;
-      border-radius: 10px;
+      width: 46px; height: 46px; border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
-      font-weight: 700; font-size: 0.75rem;
-      color: white;
-      flex-shrink: 0;
+      font-weight: 700; font-size: 0.75rem; color: white; flex-shrink: 0;
     }
-
     .logo-nvidia { background: linear-gradient(135deg, #76b900, #5a8f00); }
     .logo-apple  { background: linear-gradient(135deg, #555, #222); }
     .logo-ms     { background: linear-gradient(135deg, #00a4ef, #0078d4); }
-
-    .company-info h3 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 0.2rem;
-    }
-
-    .company-role {
-      font-size: 0.82rem;
-      color: var(--primary);
-      font-weight: 500;
-      margin-bottom: 0.3rem;
-    }
-
-    .company-project {
-      font-size: 0.83rem;
-      color: var(--text-muted);
-      margin-bottom: 0.2rem;
-    }
-
-    .company-date {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
+    .company-info h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.2rem; }
+    .company-role { font-size: 0.82rem; color: var(--primary); font-weight: 500; margin-bottom: 0.3rem; }
+    .company-project { font-size: 0.83rem; color: var(--text-muted); margin-bottom: 0.2rem; }
+    .company-date { font-size: 0.78rem; color: var(--text-muted); }
 
     /* ===== PUBLICATIONS ===== */
     .pub-item {
-      background: var(--bg-card);
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.2rem 1.4rem;
+      margin-bottom: 1rem; box-shadow: var(--shadow); transition: all 0.25s;
+      display: flex; gap: 1.2rem;
+    }
+    .pub-item:hover { transform: translateY(-1px); box-shadow: var(--shadow-hover); }
+
+    .pub-thumb {
+      width: 130px; flex-shrink: 0;
+      border-radius: 8px; overflow: hidden;
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.1rem 1.4rem;
-      margin-bottom: 0.9rem;
-      box-shadow: var(--shadow);
-      transition: all 0.25s;
-      display: flex; gap: 1rem;
+      background: var(--bg);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pub-thumb img { width: 100%; height: 90px; object-fit: cover; display: block; }
+    .pub-thumb-placeholder {
+      width: 130px; height: 90px; flex-shrink: 0;
+      border-radius: 8px; background: var(--primary-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; border: 1px solid var(--border);
     }
 
-    .pub-item:hover {
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-hover);
-    }
+    .pub-content { flex: 1; min-width: 0; }
+    .pub-content h4 { font-size: 0.92rem; font-weight: 600; color: var(--text); margin-bottom: 0.35rem; line-height: 1.4; }
+    .pub-authors { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.35rem; }
+    .pub-authors strong { color: var(--text); font-weight: 600; }
 
-    .pub-num {
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--primary);
-      background: var(--primary-light);
-      border-radius: 6px;
-      padding: 0.2rem 0.5rem;
-      height: fit-content;
-      flex-shrink: 0;
-      min-width: 30px;
-      text-align: center;
-      margin-top: 2px;
-    }
-
-    .pub-content h4 {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 0.3rem;
-      line-height: 1.4;
-    }
-
-    .pub-authors {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 0.3rem;
-    }
-
-    .pub-authors strong {
-      color: var(--text);
-      font-weight: 600;
-    }
-
+    .pub-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
     .pub-venue {
-      display: inline-block;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: white;
-      background: var(--primary);
-      border-radius: 4px;
-      padding: 0.15rem 0.5rem;
+      display: inline-block; font-size: 0.78rem; font-weight: 600;
+      color: white; background: var(--primary); border-radius: 4px; padding: 0.15rem 0.55rem;
     }
+    .pub-venue.submission { background: var(--text-muted); }
+    .pub-venue.workshop { background: #059669; }
 
-    .pub-venue.submission {
-      background: var(--text-muted);
+    .pub-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .pub-link {
+      font-size: 0.78rem; font-weight: 500; color: var(--primary);
+      text-decoration: none; border: 1px solid var(--primary-light);
+      border-radius: 4px; padding: 0.1rem 0.5rem; transition: all 0.2s;
     }
+    .pub-link:hover { background: var(--primary-light); }
 
-    .pub-venue.workshop {
-      background: #059669;
+    .pub-abstract {
+      font-size: 0.8rem; color: var(--text-muted); line-height: 1.6;
+      margin-top: 0.5rem; display: none;
     }
+    .pub-abstract.open { display: block; }
+    .toggle-abstract {
+      font-size: 0.78rem; color: var(--text-muted); cursor: pointer;
+      background: none; border: none; padding: 0; margin-top: 0.4rem;
+      text-decoration: underline; text-underline-offset: 2px;
+    }
+    .toggle-abstract:hover { color: var(--primary); }
 
     /* ===== AWARDS ===== */
-    .awards-list {
-      display: flex; flex-direction: column; gap: 0.8rem;
-    }
-
     .award-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem 1.4rem;
-      box-shadow: var(--shadow);
-      display: flex; align-items: center; gap: 1rem;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1rem 1.4rem; box-shadow: var(--shadow);
+      display: flex; align-items: center; gap: 1rem; margin-bottom: 0.8rem;
     }
-
-    .award-icon {
-      font-size: 1.5rem;
-      flex-shrink: 0;
-    }
-
-    .award-name {
-      font-weight: 600;
-      font-size: 0.92rem;
-    }
-
-    .award-period {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
+    .award-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .award-name { font-weight: 600; font-size: 0.92rem; }
+    .award-period { font-size: 0.8rem; color: var(--text-muted); }
 
     /* ===== SERVICES ===== */
     .service-group {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.2rem 1.5rem;
-      box-shadow: var(--shadow);
-      margin-bottom: 1rem;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.2rem 1.5rem; box-shadow: var(--shadow); margin-bottom: 1rem;
     }
-
-    .service-group h3 {
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 0.7rem;
-      color: var(--primary);
-    }
-
-    .tag-list {
-      display: flex; flex-wrap: wrap; gap: 0.5rem;
-    }
-
+    .service-group h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.7rem; color: var(--primary); }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .tag {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 0.25rem 0.75rem;
-      font-size: 0.8rem;
-      color: var(--text-muted);
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 20px; padding: 0.25rem 0.75rem; font-size: 0.8rem; color: var(--text-muted);
     }
+
+    /* ===== PERSONAL ===== */
+    .personal-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.4rem 1.6rem; box-shadow: var(--shadow);
+    }
+    .personal-card p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.8rem; line-height: 1.7; }
+    .personal-card p:last-child { margin-bottom: 0; color: #0d9488; font-weight: 500; }
+
+    /* ===== CLUSTRMAPS ===== */
+    .map-container { display: flex; justify-content: center; margin-top: 1rem; }
 
     /* ===== FOOTER ===== */
     footer {
-      text-align: center;
-      padding: 2rem;
-      color: var(--text-muted);
-      font-size: 0.82rem;
-      border-top: 1px solid var(--border);
+      text-align: center; padding: 2rem; color: var(--text-muted);
+      font-size: 0.82rem; border-top: 1px solid var(--border);
     }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 700px) {
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
+      .hero { grid-template-columns: 1fr; text-align: center; }
       .avatar { margin: 0 auto; }
       .hero-links { justify-content: center; }
       .research-grid { grid-template-columns: 1fr; }
       nav { padding: 0 1rem; }
       .nav-links { gap: 1rem; }
       .nav-links a { font-size: 0.8rem; }
+      .pub-thumb, .pub-thumb-placeholder { display: none; }
     }
   </style>
 </head>
@@ -508,6 +277,7 @@
     <li><a href="#publications">Publications</a></li>
     <li><a href="#awards">Awards</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="#personal">About</a></li>
   </ul>
 </nav>
 
@@ -517,30 +287,29 @@
     <h1>Jie He</h1>
     <p class="hero-subtitle">Ph.D. Student · University of Edinburgh</p>
     <p class="hero-bio">
-      I am a PhD student in Computer Science at the University of Edinburgh,
-      advised by <strong>Prof. Jeff Z. Pan</strong>. My research focuses on
-      <strong>LLM post-training</strong>, spanning augmentation, reasoning/agents,
-      efficiency, and multimodality. I am the author of
-      <strong>CLARA</strong>, an open-source framework with 900+ GitHub stars
-      for jointly learning retrieval and reasoning through latent vectors.
+      I am a fourth-year Ph.D. student at the University of Edinburgh, fortunately advised by
+      <a href="http://knowledge-representation.org/j.z.pan/" style="color:var(--primary);text-decoration:none;font-weight:500;">Prof. Jeff Z. Pan</a> and
+      <a href="https://profiles.cardiff.ac.uk/staff/gutierrezbasultov/" style="color:var(--primary);text-decoration:none;font-weight:500;">Prof. Victor Gutierrez Basulto</a>.
+      My research is generously supported by Edinburgh Doctoral College and the
+      <a href="https://machinelearning.apple.com/updates/apple-scholars-aiml-2024" style="color:var(--primary);text-decoration:none;font-weight:500;">2024 Apple Scholars in AI/ML</a> Fellowship.
+    </p>
+    <p class="hero-bio">
+      Before joining UoE, I worked at
+      <a href="https://tjunlp-lab.github.io/" style="color:var(--primary);text-decoration:none;font-weight:500;">TJU-NLP</a> since Sept. 2019,
+      advised by <a href="http://cic.tju.edu.cn/faculty/xiongdeyi/" style="color:var(--primary);text-decoration:none;font-weight:500;">Prof. Deyi Xiong</a>
+      and <a href="https://liuquncn.github.io/" style="color:var(--primary);text-decoration:none;font-weight:500;">Prof. Qun Liu</a>.
+      I also interned under <a href="https://www.neuralnoise.com/" style="color:var(--primary);text-decoration:none;font-weight:500;">Prof. Pasquale Minervini</a> in Fall 2021.
     </p>
     <div class="hero-links">
-      <a href="mailto:j.he@ed.ac.uk" class="btn btn-primary">
-        ✉️ j.he@ed.ac.uk
-      </a>
-      <a href="https://github.com/" class="btn btn-outline" target="_blank">
-        🐙 GitHub
-      </a>
-      <a href="https://linkedin.com/" class="btn btn-outline" target="_blank">
-        💼 LinkedIn
-      </a>
-      <a href="data/CV.pdf" class="btn btn-outline" target="_blank">
-        📄 CV
-      </a>
+      <a href="mailto:j.he@ed.ac.uk" class="btn btn-primary">✉️ Email</a>
+      <a href="data/CV.pdf" class="btn btn-outline" target="_blank">📄 CV</a>
+      <a href="https://scholar.google.com/citations?user=VMD_HuYAAAAJ&hl=zh-CN" class="btn btn-outline" target="_blank">🎓 Google Scholar</a>
+      <a href="https://twitter.com/Jiehenlp" class="btn btn-outline" target="_blank">🐦 Twitter</a>
+      <a href="https://github.com/probe2" class="btn btn-outline" target="_blank">🐙 GitHub</a>
     </div>
   </div>
-<img class="avatar" src="images/jieh.jpg" alt="Jie He" 
-  style="object-fit:cover; object-position:75% 15%;" />
+  <img class="avatar" src="images/jieh-modified.png" alt="Jie He"
+       style="object-fit:cover; object-position:center top;" />
 </header>
 
 <!-- MAIN -->
@@ -548,13 +317,11 @@
 
   <!-- RESEARCH INTERESTS -->
   <section id="research">
-    <h2 class="section-title">
-      <span class="icon">🔬</span> Research Interests
-    </h2>
+    <h2 class="section-title"><span class="icon">🔬</span> Research Interests</h2>
     <div class="research-grid">
       <div class="research-card aug">
         <h3>🔗 Augmentation</h3>
-        <p>Investigating the role of knowledge in the era of large language models, and how external knowledge sources can effectively complement parametric knowledge.</p>
+        <p>Investigating the role of knowledge in the era of LLMs, and how external knowledge sources can effectively complement parametric knowledge.</p>
       </div>
       <div class="research-card rea">
         <h3>🧠 Reasoning / Agents</h3>
@@ -569,9 +336,8 @@
         <p>Studying efficient training strategies for multimodal LLMs and analyzing their reasoning deficiencies.</p>
       </div>
     </div>
-    <p style="margin-top: 1.2rem; font-size: 0.88rem; color: var(--text-muted); line-height: 1.7;">
-      In addition, I am interested in <strong>LLM evaluation and benchmark construction</strong>,
-      particularly in designing challenging scenarios for rigorous assessment of question answering and reasoning.
+    <p style="margin-top:1.2rem;font-size:0.88rem;color:var(--text-muted);line-height:1.7;">
+      In addition, I am interested in <strong>LLM evaluation and benchmark construction</strong>.
       I also proposed <strong>CLARA</strong>, one of the earliest open-source frameworks that jointly learns
       retrieval and reasoning through latent vectors — receiving <strong>900+ GitHub stars</strong>.
     </p>
@@ -579,9 +345,7 @@
 
   <!-- EDUCATION -->
   <section id="education">
-    <h2 class="section-title">
-      <span class="icon">🎓</span> Education
-    </h2>
+    <h2 class="section-title"><span class="icon">🎓</span> Education</h2>
     <div class="timeline">
       <div class="timeline-item">
         <div class="timeline-dot"></div>
@@ -591,7 +355,7 @@
             <div class="timeline-date">2022 – Present</div>
           </div>
           <div class="timeline-sub">Ph.D. in Computer Science (ILCC) · Edinburgh, UK</div>
-          <div class="timeline-desc">Advisor: Prof. Jeff Z. Pan · School of Informatics</div>
+          <div class="timeline-desc">Advisors: Prof. Jeff Z. Pan &amp; Prof. Victor Gutierrez Basulto · School of Informatics</div>
         </div>
       </div>
       <div class="timeline-item">
@@ -602,7 +366,7 @@
             <div class="timeline-date">2019 – 2022</div>
           </div>
           <div class="timeline-sub">M.S. in Computer Science · Tianjin, China</div>
-          <div class="timeline-desc">Advisor: Prof. Deyi Xiong · Department of Computer Science</div>
+          <div class="timeline-desc">Advisor: Prof. Deyi Xiong · TJU-NLP Lab</div>
         </div>
       </div>
       <div class="timeline-item">
@@ -613,7 +377,7 @@
             <div class="timeline-date">2015 – 2019</div>
           </div>
           <div class="timeline-sub">B.S. in Software Engineering · Shandong, China</div>
-          <div class="timeline-desc">Department of Software Engineering</div>
+          <div class="timeline-desc">Software College</div>
         </div>
       </div>
     </div>
@@ -621,10 +385,7 @@
 
   <!-- WORK EXPERIENCE -->
   <section id="experience">
-    <h2 class="section-title">
-      <span class="icon">💼</span> Work Experience
-    </h2>
-
+    <h2 class="section-title"><span class="icon">💼</span> Work Experience</h2>
     <div class="company-card">
       <div class="company-logo logo-nvidia">NVDA</div>
       <div class="company-info">
@@ -634,7 +395,6 @@
         <div class="company-date">Oct 2025 – Feb 2026 · Remote &nbsp;|&nbsp; Mentors: Yauhen Babakhin, Ronay Ak</div>
       </div>
     </div>
-
     <div class="company-card">
       <div class="company-logo logo-apple">AAPL</div>
       <div class="company-info">
@@ -644,7 +404,6 @@
         <div class="company-date">Jun 2025 – Sep 2025 · Seattle, US &nbsp;|&nbsp; Mentor: Dr. Yizhe Zhang</div>
       </div>
     </div>
-
     <div class="company-card">
       <div class="company-logo logo-ms">MSFT</div>
       <div class="company-info">
@@ -654,13 +413,12 @@
         <div class="company-date">Jul 2024 – Oct 2024 · Redmond, US &nbsp;|&nbsp; Mentors: Pei Zhou, Longqi Yang, Jennifer Neville</div>
       </div>
     </div>
-
     <div class="company-card">
       <div class="company-logo logo-apple">AAPL</div>
       <div class="company-info">
         <h3>Apple</h3>
         <div class="company-role">Research Intern · Apple AI/ML</div>
-        <div class="company-project">📌 Investigating to generate rationales for knowledge-based QA without training.</div>
+        <div class="company-project">📌 Investigating rationale generation for knowledge-based QA without training.</div>
         <div class="company-date">Feb 2024 – May 2024 · Seattle, US &nbsp;|&nbsp; Mentors: Yiwen Sun, Benjamin Han</div>
       </div>
     </div>
@@ -670,200 +428,195 @@
   <section id="publications">
     <h2 class="section-title">
       <span class="icon">📝</span> Publications
-      <span style="font-size:0.75rem; font-weight:400; color:var(--text-muted); margin-left:auto;">* indicates equal contribution</span>
+      <span style="font-size:0.75rem;font-weight:400;color:var(--text-muted);margin-left:auto;">* indicates equal contribution</span>
     </h2>
 
+    <!-- 1 -->
     <div class="pub-item">
-      <div class="pub-num">1</div>
-      <div class="pub-content">
-        <h4>From Reflection to Sufficiency: Reinforcement-Guided Thinking Quality in Retrieval-Augmented Reasoning for LLMs</h4>
-        <div class="pub-authors"><strong>Jie He</strong>, Victor Gutierrez Basulto, Jeff Z. Pan</div>
-        <span class="pub-venue submission">In Submission</span>
-      </div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-num">2</div>
-      <div class="pub-content">
-        <h4>MINTQA: A Multi-Hop Question Answering Benchmark for Evaluating LLMs on New and Tail Knowledge</h4>
-        <div class="pub-authors"><strong>Jie He</strong>*, Nan Hu*, Wanqiu Long, Jiaoyan Chen, Jeff Z. Pan</div>
-        <span class="pub-venue submission">In Submission</span>
-      </div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-num">3</div>
-      <div class="pub-content">
-        <h4>Clara: Bridging Retrieval and Generation with Continuous Latent Reasoning</h4>
-        <div class="pub-authors"><strong>Jie He</strong>, Richard He Bai, Sinead Williamson, Jeff Z. Pan, Navdeep Jaitly, Yizhe Zhang</div>
-        <span class="pub-venue submission">In Submission</span>
-      </div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-num">4</div>
+      <div class="pub-thumb"><img src="images/acl25.png" alt="GenTool" /></div>
       <div class="pub-content">
         <h4>GenTool: Enhancing Tool Generalization in Language Models through Zero-to-One and Weak-to-Strong Simulation</h4>
         <div class="pub-authors"><strong>Jie He</strong>, Jennifer Neville, Mengting Wan, Longqi Yang, Hui Liu, Xiaofeng Xu, Xia Song, Jeff Z. Pan, Pei Zhou</div>
-        <span class="pub-venue">Findings of ACL 2025</span>
+        <div class="pub-meta">
+          <span class="pub-venue">Findings of ACL 2025</span>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2502.18990/" class="pub-link" target="_blank">[paper]</a>
+          </div>
+        </div>
+        <button class="toggle-abstract" onclick="toggleAbstract(this)">▶ Show abstract</button>
+        <div class="pub-abstract">Large Language Models (LLMs) can enhance their capabilities as AI assistants by integrating external tools, allowing them to access a wider range of information. We present GenTool, a novel training framework addressing two dimensions: Zero-to-One Generalization and Weak-to-Strong Generalization. Through extensive experiments across four generalization scenarios, our method significantly enhances tool-usage capabilities of LLMs ranging from 1B to 8B parameters, achieving performance that surpasses GPT-4o.</div>
       </div>
     </div>
 
+    <!-- 2 -->
     <div class="pub-item">
-      <div class="pub-num">5</div>
-      <div class="pub-content">
-        <h4>kNN-XICL: Cross-lingual In-Context Learning with Nearest Neighbor Inference</h4>
-        <div class="pub-authors"><strong>Jie He</strong>, Simon Yu, Victor Gutierrez Basulto, Jeff Z. Pan</div>
-        <span class="pub-venue workshop">IJCNN Workshop 2025</span>
-      </div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-num">6</div>
+      <div class="pub-thumb"><img src="images/naacl_plangtg.png" alt="KG2Text" /></div>
       <div class="pub-content">
         <h4>Exploring Knowledge Graph to Text Generation with Large Language Models: Techniques, Challenges, and Innovations</h4>
         <div class="pub-authors"><strong>Jie He</strong>*, Yijun Yang*, Wanqiu Long, Victor Gutierrez Basulto, Jeff Z. Pan</div>
-        <span class="pub-venue">NAACL 2025</span>
+        <div class="pub-meta">
+          <span class="pub-venue">NAACL 2025</span>
+          <div class="pub-links">
+            <a href="https://aclanthology.org/2025.naacl-long.513/" class="pub-link" target="_blank">[paper]</a>
+            <a href="https://github.com/probe2/kg_text" class="pub-link" target="_blank">[code]</a>
+          </div>
+        </div>
+        <button class="toggle-abstract" onclick="toggleAbstract(this)">▶ Show abstract</button>
+        <div class="pub-abstract">We conduct a comprehensive evaluation of prompting open-source LLMs on graph-to-text generation tasks. We propose a novel diversity-difficulty-based few-shot sample selection method and introduce PlanGTG, a new graph-to-text dataset annotated with reordering and attribution sub-tasks. Extensive evaluations demonstrate significant improvements in generated text quality from both few-shot and fine-tuning perspectives.</div>
       </div>
     </div>
 
+    <!-- 3 -->
     <div class="pub-item">
-      <div class="pub-num">7</div>
+      <div class="pub-thumb"><img src="images/naacl_miceval.png" alt="MiCEval" /></div>
       <div class="pub-content">
         <h4>MiCEval: Unveiling Multimodal Chain of Thought's Quality via Image Description and Reasoning Steps</h4>
         <div class="pub-authors">Xiongtao Zhou*, <strong>Jie He</strong>*, Lanyu Chen, Jingyu Li, Haojing Chen, Victor Gutierrez Basulto, Jeff Z. Pan, Hanjie Chen</div>
-        <span class="pub-venue">NAACL 2025</span>
+        <div class="pub-meta">
+          <span class="pub-venue">NAACL 2025</span>
+          <div class="pub-links">
+            <a href="https://aclanthology.org/2025.naacl-long.504/" class="pub-link" target="_blank">[paper]</a>
+            <a href="https://github.com/alenai97/MiCEval" class="pub-link" target="_blank">[code]</a>
+          </div>
+        </div>
+        <button class="toggle-abstract" onclick="toggleAbstract(this)">▶ Show abstract</button>
+        <div class="pub-abstract">We propose MiCEval, a framework to assess the correctness of reasoning chains in Multimodal Chain of Thought (MCoT) by evaluating the quality of both the description and each reasoning step. MiCEval is built upon a fine-grained dataset with annotations rating each step according to correctness, relevance, and informativeness. Experiments on four MLLMs show step-wise evaluations align more closely with human judgments.</div>
       </div>
     </div>
 
+    <!-- 4 -->
     <div class="pub-item">
-      <div class="pub-num">8</div>
+      <div class="pub-thumb"><img src="images/colm2024.png" alt="COLM2024" /></div>
       <div class="pub-content">
         <h4>Evaluating the Adversarial Robustness of Retrieval-Based In-Context Learning for Large Language Models</h4>
         <div class="pub-authors">Simon Yu*, <strong>Jie He</strong>*, Pasquale Minervini, Jeff Z. Pan</div>
-        <span class="pub-venue">COLM 2024</span>
+        <div class="pub-meta">
+          <span class="pub-venue">COLM 2024</span>
+          <div class="pub-links">
+            <a href="https://openreview.net/pdf?id=Ecgev5ZZpq" class="pub-link" target="_blank">[paper]</a>
+            <a href="https://github.com/simonucl/adv-retreival-icl" class="pub-link" target="_blank">[code]</a>
+          </div>
+        </div>
+        <button class="toggle-abstract" onclick="toggleAbstract(this)">▶ Show abstract</button>
+        <div class="pub-abstract">We study the robustness of retrieval-augmented ICL against adversarial attacks. Retrieval-augmented models enhance robustness against test sample attacks (4.87% ASR reduction) but exhibit overconfidence in demonstrations (2% ASR increase). We introduce DARD, a training-free adversarial defence method, achieving a 15% reduction in ASR over baselines.</div>
       </div>
     </div>
 
+    <!-- 5 -->
     <div class="pub-item">
-      <div class="pub-num">9</div>
+      <div class="pub-thumb"><img src="images/acl2024.png" alt="ACL2024" /></div>
       <div class="pub-content">
         <h4>An Empirical Study on Parameter-Efficient Fine-Tuning for Multimodal Large Language Models</h4>
         <div class="pub-authors">Xiongtao Zhou*, <strong>Jie He</strong>*, Yuhua Ke, Guangyao Zhu, Victor Gutierrez Basulto, Jeff Z. Pan</div>
-        <span class="pub-venue">Findings of ACL 2024</span>
+        <div class="pub-meta">
+          <span class="pub-venue">Findings of ACL 2024</span>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2406.05130" class="pub-link" target="_blank">[paper]</a>
+            <a href="https://github.com/alenai97/PEFT-MLLM" class="pub-link" target="_blank">[code]</a>
+          </div>
+        </div>
+        <button class="toggle-abstract" onclick="toggleAbstract(this)">▶ Show abstract</button>
+        <div class="pub-abstract">We study Parameter-Efficient Fine-Tuning (PEFT) methods for MLLMs, evaluating four PEFT methods on seven datasets. We show that the adapter is the best-performing PEFT method, and fine-tuning connector layers leads to improved performance in most MLLMs.</div>
       </div>
     </div>
 
+    <!-- 6 -->
     <div class="pub-item">
-      <div class="pub-num">10</div>
+      <div class="pub-thumb"><img src="images/acl2023.jpg" alt="BUCA" /></div>
       <div class="pub-content">
         <h4>BUCA: A Binary Classification Approach to Unsupervised Commonsense Question Answering</h4>
         <div class="pub-authors"><strong>Jie He</strong>, Simon Yu, Victor Gutierrez Basulto, Jeff Z. Pan</div>
-        <span class="pub-venue">ACL 2023</span>
+        <div class="pub-meta">
+          <span class="pub-venue">ACL 2023</span>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2305.15932" class="pub-link" target="_blank">[paper]</a>
+            <a href="https://github.com/probe2/BUCA" class="pub-link" target="_blank">[code]</a>
+          </div>
+        </div>
+        <button class="toggle-abstract" onclick="toggleAbstract(this)">▶ Show abstract</button>
+        <div class="pub-abstract">We propose to transform the downstream multiple choice QA task into a simpler binary classification task by ranking all candidate answers according to their reasonableness. We convert knowledge graph triples into reasonable and unreasonable texts for training. Extensive results show effectiveness on various QA benchmarks, with our approach being less data hungry than existing methods.</div>
       </div>
     </div>
 
+    <!-- 7 -->
     <div class="pub-item">
-      <div class="pub-num">11</div>
+      <div class="pub-thumb"><img src="images/EMNLP2023.jpg" alt="EMNLP2023" /></div>
       <div class="pub-content">
         <h4>Instances and Labels: Hierarchy-aware Joint Supervised Contrastive Learning for Hierarchical Multi-Label Text Classification</h4>
         <div class="pub-authors">Simon Yu*, <strong>Jie He</strong>*, Victor Gutierrez Basulto, Jeff Z. Pan</div>
-        <span class="pub-venue">Findings of EMNLP 2023</span>
+        <div class="pub-meta">
+          <span class="pub-venue">Findings of EMNLP 2023</span>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2310.05128" class="pub-link" target="_blank">[paper]</a>
+            <a href="https://github.com/simonucl/HJCL" class="pub-link" target="_blank">[code]</a>
+          </div>
+        </div>
       </div>
     </div>
 
+    <!-- 8 -->
     <div class="pub-item">
-      <div class="pub-num">12</div>
+      <div class="pub-thumb"><img src="images/acl2021.png" alt="ACL2021" /></div>
       <div class="pub-content">
-        <h4>MetaXCR: Reinforcement-Based Meta-Transfer Learning for Cross-Lingual Commonsense Reasoning</h4>
-        <div class="pub-authors"><strong>Jie He</strong>, Yu Fu</div>
-        <span class="pub-venue workshop">NeurIPS Workshop 2022</span>
-      </div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-num">13</div>
-      <div class="pub-content">
-        <h4>Evaluate Discourse Cohesion in Pre-trained Language Models</h4>
-        <div class="pub-authors"><strong>Jie He</strong>, Wanqiu Long, Deyi Xiong</div>
-        <span class="pub-venue workshop">COLING Workshop 2022</span>
-      </div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-num">14</div>
-      <div class="pub-content">
-        <h4>TGError: An Error-Annotated Dataset and Benchmark Tasks for Text Generation from Pretrained Language Models</h4>
+        <h4>TGEA: An Error-Annotated Dataset and Benchmark Tasks for Text Generation from Pretrained Language Models</h4>
         <div class="pub-authors"><strong>Jie He</strong>*, Bo Peng*, Yi Liao, Qun Liu, Deyi Xiong</div>
-        <span class="pub-venue">ACL 2021</span>
+        <div class="pub-meta">
+          <span class="pub-venue">ACL 2021</span>
+          <div class="pub-links">
+            <a href="https://aclanthology.org/2021.acl-long.469.pdf" class="pub-link" target="_blank">[paper]</a>
+            <a href="https://download.mindspore.cn/dataset/TGEA/" class="pub-link" target="_blank">[dataset]</a>
+          </div>
+        </div>
+        <button class="toggle-abstract" onclick="toggleAbstract(this)">▶ Show abstract</button>
+        <div class="pub-abstract">We propose TGEA, using carefully selected prompts to guide GPT-2 to generate candidate sentences, selecting 47K for error annotation. We create an error taxonomy covering 24 types of errors and propose a series of automatic diagnosis tasks including error detection, error type classification, associated span detection, and error rationale generation.</div>
       </div>
     </div>
 
+    <!-- 9 -->
     <div class="pub-item">
-      <div class="pub-num">15</div>
+      <div class="pub-thumb"><img src="images/emnlp2020.png" alt="EMNLP2020" /></div>
       <div class="pub-content">
         <h4>The Box is in the Pen: Evaluating Commonsense Reasoning in Neural Machine Translation</h4>
         <div class="pub-authors"><strong>Jie He</strong>*, Tao Wang*, Deyi Xiong, Qun Liu</div>
-        <span class="pub-venue">Findings of EMNLP 2020</span>
+        <div class="pub-meta">
+          <span class="pub-venue">Findings of EMNLP 2020</span>
+          <div class="pub-links">
+            <a href="https://aclanthology.org/2020.findings-emnlp.327/" class="pub-link" target="_blank">[paper]</a>
+            <a href="https://github.com/tjunlp-lab/CommonMT" class="pub-link" target="_blank">[dataset]</a>
+          </div>
+        </div>
+        <button class="toggle-abstract" onclick="toggleAbstract(this)">▶ Show abstract</button>
+        <div class="pub-abstract">We present a test suite to evaluate the commonsense reasoning capability of neural machine translation, covering lexical and syntactic ambiguity that requires commonsense knowledge to resolve. We manually create 1,200 triples and demonstrate that neural machine translation performs poorly on commonsense reasoning.</div>
       </div>
     </div>
 
-    <div class="pub-item">
-      <div class="pub-num">16</div>
-      <div class="pub-content">
-        <h4>UniArk: A Holistic Approach to Unbiased and Consistent Factual Knowledge Extraction</h4>
-        <div class="pub-authors">Yijun Yang, <strong>Jie He</strong>, Pinzhen Chen, Victor Gutierrez Basulto, Jeff Z. Pan</div>
-        <span class="pub-venue">NAACL 2024</span>
-      </div>
-    </div>
 
-    <div class="pub-item">
-      <div class="pub-num">17</div>
-      <div class="pub-content">
-        <h4>Similarity-Based Domain Adaptation with LLMs for Cross-Domain Sentiment Classification</h4>
-        <div class="pub-authors"><strong>Jie He</strong>, Wendi Zhou, Xiang Lorraine Li, Jeff Z. Pan</div>
-        <span class="pub-venue submission">Preprint</span>
-      </div>
-    </div>
-
-    <div class="pub-item">
-      <div class="pub-num">18</div>
-      <div class="pub-content">
-        <h4>Meta-RTL: Reinforcement-Based Meta-Transfer Learning for Low-Resource Commonsense Reasoning</h4>
-        <div class="pub-authors">Yu Fu*, <strong>Jie He</strong>*, Yifang Yang, Qun Liu, Deyi Xiong</div>
-        <span class="pub-venue submission">Preprint</span>
-      </div>
-    </div>
   </section>
 
   <!-- AWARDS -->
   <section id="awards">
-    <h2 class="section-title">
-      <span class="icon">🏆</span> Honors &amp; Awards
-    </h2>
-    <div class="awards-list">
-      <div class="award-item">
-        <div class="award-icon">🍎</div>
-        <div>
-          <div class="award-name">Apple Scholars in AI/ML PhD Fellowship</div>
-          <div class="award-period">2024 – 2026</div>
+    <h2 class="section-title"><span class="icon">🏆</span> Honors &amp; Awards</h2>
+    <div class="award-item">
+      <div class="award-icon">🍎</div>
+      <div>
+        <div class="award-name">
+          <a href="https://machinelearning.apple.com/updates/apple-scholars-aiml-2024" style="color:var(--text);text-decoration:none;">Apple Scholars in AI/ML PhD Fellowship</a>
         </div>
+        <div class="award-period">2024 – 2026</div>
       </div>
-      <div class="award-item">
-        <div class="award-icon">🎓</div>
-        <div>
-          <div class="award-name">PhD Scholarship, School of Informatics, University of Edinburgh</div>
-          <div class="award-period">Oct 2022 – Sep 2025</div>
-        </div>
+    </div>
+    <div class="award-item">
+      <div class="award-icon">🎓</div>
+      <div>
+        <div class="award-name">PhD Scholarship, Edinburgh Doctoral College, University of Edinburgh</div>
+        <div class="award-period">Oct 2022 – Sep 2025</div>
       </div>
     </div>
   </section>
 
   <!-- ACADEMIC SERVICES -->
   <section id="services">
-    <h2 class="section-title">
-      <span class="icon">🤝</span> Academic Services
-    </h2>
+    <h2 class="section-title"><span class="icon">🤝</span> Academic Services</h2>
     <div class="service-group">
       <h3>Reviewer</h3>
       <div class="tag-list">
@@ -894,25 +647,46 @@
     </div>
   </section>
 
+  <!-- PERSONAL -->
+  <section id="personal">
+    <h2 class="section-title"><span class="icon">😊</span> About Me</h2>
+    <div class="personal-card">
+      <p>I love philosophy. My favorite philosopher is Nietzsche, and I also enjoy reading Kant's <em>Critique of Pure Reason</em>. I hope to explore more studies combining linguistics and philosophy — such as Wittgenstein's language games — in the future.</p>
+      <p>💬 I am open to academic collaborations. Please drop me an email if you are interested in working with me!</p>
+    </div>
+  </section>
+
+  <!-- VISITOR MAP -->
+  <div class="map-container">
+    <script type="text/javascript" id="clustrmaps"
+      src="//clustrmaps.com/map_v2.js?d=an1OxH7o9dvs29tcBaLmZmi9l5VFKNvwS6CWT24y7Sw&cl=ffffff&w=a">
+    </script>
+  </div>
+
 </main>
 
 <!-- FOOTER -->
 <footer>
   <p>© 2026 Jie He · University of Edinburgh · <a href="mailto:j.he@ed.ac.uk" style="color:var(--primary);text-decoration:none;">j.he@ed.ac.uk</a></p>
-  <p style="margin-top:0.4rem;color:#94a3b8;">Last updated: March 2026</p>
+  <p style="margin-top:0.4rem;color:#94a3b8;">
+    Thanks <a href="https://jonbarron.info" style="color:#94a3b8;" target="_blank">Jon Barron</a> for the original template inspiration.
+  </p>
 </footer>
 
 <script>
+  function toggleAbstract(btn) {
+    const abstract = btn.nextElementSibling;
+    const isOpen = abstract.classList.toggle('open');
+    btn.textContent = isOpen ? '▼ Hide abstract' : '▶ Show abstract';
+  }
+
   // Active nav highlight on scroll
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
-
   window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - 90) {
-        current = sec.getAttribute('id');
-      }
+      if (window.scrollY >= sec.offsetTop - 90) current = sec.getAttribute('id');
     });
     navLinks.forEach(a => {
       a.style.color = a.getAttribute('href') === '#' + current ? 'var(--primary)' : '';
