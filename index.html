@@ -1,253 +1,923 @@
-<!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jie He | PhD Student at University of Edinburgh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-light: #dbeafe;
+      --primary-dark: #1d4ed8;
+      --accent: #7c3aed;
+      --bg: #f8fafc;
+      --bg-card: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.06);
+      --shadow-hover: 0 4px 12px rgba(37,99,235,0.12), 0 8px 32px rgba(37,99,235,0.08);
+      --radius: 12px;
+    }
 
-  <title>Jie He</title>
-  
-  <meta name="author" content="Jon Barron">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link rel="icon" type="image/png" href="images/seal_icon.png">
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex; gap: 1.8rem; list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 110px 2rem 70px;
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-bio {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 580px;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-links {
+      display: flex; flex-wrap: wrap; gap: 0.7rem;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.5rem 1.1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 1.5px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .avatar {
+      width: 170px; height: 170px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 4rem;
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 8px 32px rgba(37,99,235,0.25);
+      flex-shrink: 0;
+    }
+
+    /* ===== BADGE HIGHLIGHT ===== */
+    .award-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      color: #92400e;
+      border: 1px solid #fcd34d;
+      border-radius: 20px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    section { margin-bottom: 3.5rem; }
+
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1.4rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--primary-light);
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+
+    .section-title .icon {
+      width: 28px; height: 28px;
+      background: var(--primary-light);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    /* ===== RESEARCH INTERESTS ===== */
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .research-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.4rem;
+      box-shadow: var(--shadow);
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .research-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+
+    .research-card.aug::before { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
+    .research-card.rea::before { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
+    .research-card.eff::before { background: linear-gradient(90deg, #10b981, #34d399); }
+    .research-card.mul::before { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+
+    .research-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .research-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .research-card p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ===== TIMELINE ===== */
+    .timeline { position: relative; }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .timeline-dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--primary);
+      margin-top: 6px;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 3px var(--primary-light);
+    }
+
+    .timeline-content {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.4rem;
+      box-shadow: var(--shadow);
+    }
+
+    .timeline-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .timeline-date {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+      margin-left: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    .timeline-sub {
+      font-size: 0.85rem;
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== WORK EXPERIENCE ===== */
+    .company-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.5rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 1rem;
+      display: flex; gap: 1.2rem; align-items: flex-start;
+      transition: all 0.25s;
+    }
+
+    .company-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .company-logo {
+      width: 46px; height: 46px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.75rem;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .logo-nvidia { background: linear-gradient(135deg, #76b900, #5a8f00); }
+    .logo-apple  { background: linear-gradient(135deg, #555, #222); }
+    .logo-ms     { background: linear-gradient(135deg, #00a4ef, #0078d4); }
+
+    .company-info h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .company-role {
+      font-size: 0.82rem;
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+
+    .company-project {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .company-date {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== PUBLICATIONS ===== */
+    .pub-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.4rem;
+      margin-bottom: 0.9rem;
+      box-shadow: var(--shadow);
+      transition: all 0.25s;
+      display: flex; gap: 1rem;
+    }
+
+    .pub-item:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .pub-num {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: var(--primary-light);
+      border-radius: 6px;
+      padding: 0.2rem 0.5rem;
+      height: fit-content;
+      flex-shrink: 0;
+      min-width: 30px;
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    .pub-content h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+      line-height: 1.4;
+    }
+
+    .pub-authors {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .pub-authors strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .pub-venue {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: white;
+      background: var(--primary);
+      border-radius: 4px;
+      padding: 0.15rem 0.5rem;
+    }
+
+    .pub-venue.submission {
+      background: var(--text-muted);
+    }
+
+    .pub-venue.workshop {
+      background: #059669;
+    }
+
+    /* ===== AWARDS ===== */
+    .awards-list {
+      display: flex; flex-direction: column; gap: 0.8rem;
+    }
+
+    .award-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.4rem;
+      box-shadow: var(--shadow);
+      display: flex; align-items: center; gap: 1rem;
+    }
+
+    .award-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .award-name {
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .award-period {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== SERVICES ===== */
+    .service-group {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.5rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 1rem;
+    }
+
+    .service-group h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+      color: var(--primary);
+    }
+
+    .tag-list {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+    }
+
+    .tag {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 700px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .avatar { margin: 0 auto; }
+      .hero-links { justify-content: center; }
+      .research-grid { grid-template-columns: 1fr; }
+      nav { padding: 0 1rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 0.8rem; }
+    }
+  </style>
 </head>
-
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Jie He</name>
-              </p>
-              <p>My name is Jie He. I am currently a fourth-year Ph.D. student at University of Edinburgh. I am fortunately advised by <a href="http://knowledge-representation.org/j.z.pan/">Prof. Jeff Pan</a> and <a href="https://profiles.cardiff.ac.uk/staff/gutierrezbasultov/">Prof. Victor Gutierrez Basulto</a>. My research is generously supported by Edinburgh Doctoral College and  <a href="https://machinelearning.apple.com/updates/apple-scholars-aiml-2024">2024 Apple Schaolars in AI/ML</a> Fellowships.</p>
-              </p>
-              <p>
-               Before I join UoE, I was fortunated to work at <a href="https://tjunlp-lab.github.io/">TJU-NLP</a> since Sept. 2019, advised by <a href="http://cic.tju.edu.cn/faculty/xiongdeyi/">Prof. Deyi Xiong</a> and  advised by <a href="https://liuquncn.github.io/">Prof. Qun Liu</a>. Also, I worked as an intern under the supervision of <a href="https://www.neuralnoise.com/">Prof. Pasquale Minervini</a> in Fall 2021. 
-                I obtained my M.S. degree in Computer Science Department at Tianjin University and my bachelor's degree in Software College, Shandong University.
-              </p>
-              <p>
-                <font color="red">I am actively looking for PhD Intern position starting from 2025.</font>
-              </p> 
-              <p style="text-align:center">
-                <a href="mailto:j.he@ed.ac.uk">Email</a> &nbsp/&nbsp
-                <a href="data/CV.pdf">CV</a> &nbsp/&nbsp
-                <a href="https://scholar.google.com/citations?user=VMD_HuYAAAAJ&hl=zh-CN">Google Scholar</a> &nbsp/&nbsp
-                <a href="https://twitter.com/Jiehenlp">Twitter</a> &nbsp/&nbsp
-                <a href="https://github.com/probe2">Github</a>
-              </p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/jieh.jpg"><img style="width:90%;max-width:90%" alt="profile photo" src="images/jieh-modified.png" class="hoverZoomLink"></a>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Research</heading>
-              <p>
-                My primary research interests lie in natural language processing (NLP), especially in <strong>commonsense reasoning</strong> and <strong>grammactical error correction</strong>. Currently, my research are driven by two goals:</p>
-              <p>
-                <span class="highlight">Reasoning: </span> Build an AI system that taps into intrinsic knowledge and uses extrinsic knowledge for logical reasoning.</p>
-              <p> 
-                <span class="highlight">Generalization:</span> Design a creative AI model that can use existing experience to solve new problems. </p>
-            </td>
-          </tr>
-        </tbody></table>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/acl25.png" alt="blind-date" width="240" height="150">
-            </td>
-            <td width="75%" valign="middle">
-                <papertitle>GenTool: Enhancing Tool Generalization in Language Models through Zero-to-One and Weak-to-Strong Simulation
-</papertitle>
-              <br>
-              <p><strong>Jie He</strong>, Jennifer Neville, Mengting Wan, Longqi Yang, Hui Liu, Xiaofeng Xu, Xia Song, Jeff Z. Pan, Pei Zhou </p>
-              <em>ACL 2025 findings</em>
-              <a href="https://arxiv.org/abs/2502.18990/">[paper]</a> 
-              <p>Large Language Models (LLMs) can enhance their capabilities as AI assistants by integrating external tools, allowing them to access a wider range of information. While recent LLMs are typically fine-tuned with tool usage examples during supervised fine-tuning (SFT), questions remain about their ability to develop robust tool-usage skills and can effectively generalize to unseen queries and tools. In this work, we present GenTool, a novel training framework that prepares LLMs for diverse generalization challenges in tool utilization. Our approach addresses two fundamental dimensions critical for real-world applications: Zero-to-One Generalization, enabling the model to address queries initially lacking a suitable tool by adopting and utilizing one when it becomes available, and Weak-to-Strong Generalization, allowing models to leverage enhanced versions of existing tools to solve queries. To achieve this, we develop synthetic training data simulating these two dimensions of tool usage and introduce a two-stage fine-tuning approach: optimizing tool ranking, then refining tool selection. Through extensive experiments across four generalization scenarios, we demonstrate that our method significantly enhances the tool-usage capabilities of LLMs ranging from 1B to 8B parameters, achieving performance that surpasses GPT-4o. Furthermore, our analysis also provides valuable insights into the challenges LLMs encounter in tool generalization.</p>              
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/naacl_plangtg.png" alt="blind-date" width="240" height="150">
-            </td>
-            <td width="75%" valign="middle">
-                <papertitle>Evaluating and Improving Graph to Text Generation with Large Language Models
-</papertitle>
-              <br>
-              <p><strong>Jie He* </strong>, Yijun Yang*, Wanqiu Long, Deyi Xiong, Victor Gutierrez Basulto, Jeff Z. Pan </p>
-              <em>NAACL 2025</em>
-              <a href="https://aclanthology.org/2025.naacl-long.513/">[paper]</a> <a href="https://github.com/probe2/kg_text">[code]</a> 
-              <p>Large language models (LLMs) have demonstrated immense potential across various tasks. However, research for exploring and improving the capabilities of LLMs in interpreting graph structures remains limited. To address this gap, we conduct a comprehensive evaluation of prompting current open-source LLMs on graph-to-text generation tasks. Although we explored the optimal prompting strategies and proposed a novel and effective diversity-difficulty-based few-shot sample selection method, we found that the improvements from tuning-free approaches were incremental, as LLMs struggle with planning on complex graphs, particularly those with a larger number of triplets. To further improve LLMs in planning with graph sequences and grounding in truth, we introduce a new graph-to-text dataset, PlanGTG, annotated with two sub-tasks: reordering and attribution. Through extensive automatic and human evaluations, we demonstrate significant improvements in the quality of generated text from both few-shot learning and fine-tuning perspectives using the PlanGTG dataset. Our study paves the way for new research directions in graph-to-text generation.</p>              
-            </td>
-          </tr>
-            <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/naacl_miceval.png" alt="blind-date" width="240" height="150">
-            </td>
-            <td width="75%" valign="middle">
-                <papertitle>MiCEval: Unveiling Multimodal Chain of Thought's Quality via Image Description and Reasoning Steps
-</papertitle>
-              <br>
-              <p>Xiongtao Zhou*,<strong> Jie He* </strong>, Lanyu Chen, Jingyu li, Haojing Chen, Victor Gutierrez Basulto, Jeff Z. Pan, Hanjie Chen </p>
-              <em>NAACL 2025</em>
-              <a href="https://aclanthology.org/2025.naacl-long.504/">[paper]</a> <a href="https://github.com/alenai97/MiCEval">[code]</a> 
-              <p>Multimodal Chain of Thought (MCoT) is a popular prompting strategy for improving the performance of multimodal large language models (MLLMs) across a range of complex reasoning tasks. Despite its popularity, there is a notable absence of automated methods for evaluating the quality of reasoning steps in MCoT. To address this gap, we propose Multimodal Chain-of-Thought Evaluation (MiCEval), a framework designed to assess the correctness of reasoning chains by evaluating the quality of both the description and each reasoning step. The evaluation of the description component focuses on the accuracy of the image descriptions, while the reasoning step evaluates the quality of each step as it is conditionally generated based on the preceding steps. MiCEval is built upon a fine-grained dataset with annotations that rate each step according to correctness, relevance, and informativeness. Extensive experiments on four state-of-the-art MLLMs show that step-wise evaluations using MiCEval align more closely with human judgments compared to existing methods based on cosine similarity or fine-tuning approaches.</p>              
-            </td>
-          </tr>
-            <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/colm2024.png" alt="blind-date" width="240" height="150">
-            </td>
-            <td width="75%" valign="middle">
-                <papertitle>Evaluating the Adversarial Robustness of Retrieval-Based In-Context Learning for Large Language Models
-</papertitle>
-              <br>
-              <p>Simon Chi Lok Yu*,<strong> Jie He* </strong>, Pasquale Minervini, Jeff Z. Pan</p>
-              <em>COLM 2024 </em>
-              <a href="https://openreview.net/pdf?id=Ecgev5ZZpq">[paper]</a> <a href="https://github.com/simonucl/adv-retreival-icl">[code]</a> 
-              <p>With the emergence of large language models, such as LLaMA and OpenAI GPT-3, In-Context Learning (ICL) gained significant attention due to its effectiveness and efficiency. However, ICL is very sensitive to the choice, order, and verbaliser used to encode the demonstrations in the prompt. Retrieval-Augmented ICL methods try to address this problem by leveraging retrievers to extract semantically related examples as demonstrations. While this approach yields more accurate results, its robustness against various types of adversarial attacks, including perturbations on test samples, demonstrations, and retrieved data, remains under-explored. Our study reveals that retrieval-augmented models can enhance robustness against test sample attacks, outperforming vanilla ICL with a 4.87% reduction in Attack Success Rate (ASR); however, they exhibit overconfidence in the demonstrations, leading to a 2% increase in ASR for demonstration attacks. Adversarial training can help improve the robustness of ICL methods to adversarial attacks; however, such a training scheme can be too costly in the context of LLMs. As an alternative, we introduce an effective training-free adversarial defence method, DARD, which enriches the example pool with those attacked samples. We show that DARD yields improvements in performance and robustness, achieving a 15% reduction in ASR over the baselines. </p>
-            </td>
-          </tr>
-            <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/acl2024.png" alt="blind-date" width="240" height="150">
-            </td>
-            <td width="75%" valign="middle">
-                <papertitle>An Empirical Study on Parameter-Efficient Fine-Tuning for MultiModal Large Language Models
-</papertitle>
-              <br>
-              <p>Xiongtao Zhou*,<strong> Jie He* </strong>, Yuhua Ke, Guangyao Zhu, Victor Gutierrez Basulto, Jeff Z. Pan</p>
-              <em>ACL 2024 finding</em>
-              <a href="https://arxiv.org/abs/2406.05130">[paper]</a> <a href="https://github.com/alenai97/PEFT-MLLM">[code]</a> 
-              <p>Multimodal Large Language Models (MLLMs) fine-tuned with multimodal instruction-following data have demonstrated formidable capabilities in multimodal tasks. However, fine-tuning all parameters of MLLMs has become challenging due to the rapid growth of the overall model's parameters. To address this issue, we study Parameter-Efficient Fine-Tuning (PEFT) methods for MLLMs.  We aim to identify effective methods for enhancing performance in scenarios where only a limited number of parameters are trained. This paper conducts empirical studies that employ four widely used PEFT methods to fine-tune the  LLM component of open-source MLLMs. We present a comprehensive analysis that encompasses various aspects, including the impact of PEFT methods on various models, parameters and location of PEFT module, fine-tuning data scale, model stability based on PEFT method, MLLM's generalization, and hallucination. We evaluated four PEFT methods on seven datasets from two different categories, unseen and seen datasets. Across all experiments, we show that the adapter is the best-performing PEFT method in various aspects. At the same time, fine-tuning the connector layers  leads to improved performance in most MLLMs.</p>              
-            </td>
-          </tr>
+<!-- NAVBAR -->
+<nav>
+  <a href="#" class="nav-brand">Jie He</a>
+  <ul class="nav-links">
+    <li><a href="#research">Research</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#services">Services</a></li>
+  </ul>
+</nav>
 
-            <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/EMNLP2023.jpg" alt="blind-date" width="240" height="150">
-            </td>
-            <td width="75%" valign="middle">
-                <papertitle>Instances and Labels: Hierarchy-aware Joint Supervised Contrastive Learning for Hierarchical Multi-Label Text Classification
-</papertitle>
-              <br>
-              <p>Simon Chi Lok U*, <strong>Jie He*</strong>,  Victor Gutierrez-Basulto and Jeff Z. Pan</p>
-              <em>EMNLP 2023 finding</em>
-              <a href="https://arxiv.org/abs/2310.05128">[paper]</a> <a href="https://github.com/simonucl/HJCL">[code]</a> 
-              <p> Hierarchical multi-label text classification (HMTC) aims at utilizing a label hierarchy in multi-label classification. Recent approaches to HMTC deal with the problem of imposing an over-constrained premise on the output space by using contrastive learning on generated samples in a semi-supervised manner to bring text and label embeddings closer. However, the generation of samples tends to introduce noise as it ignores the correlation between similar samples in the same batch. One solution to this issue is supervised contrastive learning, but it remains an underexplored topic in HMTC due to its complex structured labels. To overcome this challenge, we propose HJCL, a Hierarchy-aware Joint Supervised Contrastive Learning method that bridges the gap between supervised contrastive learning and HMTC. Specifically, we employ both instance-wise and label-wise contrastive learning techniques and carefully construct batches to fulfill the contrastive learning objective. Extensive experiments on four multi-path HMTC datasets demonstrate that HJCL achieves promising results and the effectiveness of Contrastive Learning on HMTC.</p>
-            </td>
-          </tr>
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-text">
+    <h1>Jie He</h1>
+    <p class="hero-subtitle">Ph.D. Student · University of Edinburgh</p>
+    <p class="hero-bio">
+      I am a PhD student in Computer Science at the University of Edinburgh,
+      advised by <strong>Prof. Jeff Z. Pan</strong>. My research focuses on
+      <strong>LLM post-training</strong>, spanning augmentation, reasoning/agents,
+      efficiency, and multimodality. I am the author of
+      <strong>CLARA</strong>, an open-source framework with 900+ GitHub stars
+      for jointly learning retrieval and reasoning through latent vectors.
+    </p>
+    <div class="hero-links">
+      <a href="mailto:j.he@ed.ac.uk" class="btn btn-primary">
+        ✉️ j.he@ed.ac.uk
+      </a>
+      <a href="https://github.com/" class="btn btn-outline" target="_blank">
+        🐙 GitHub
+      </a>
+      <a href="https://linkedin.com/" class="btn btn-outline" target="_blank">
+        💼 LinkedIn
+      </a>
+      <a href="jie_he_s_new_CV-13.pdf" class="btn btn-outline" target="_blank">
+        📄 CV
+      </a>
+    </div>
+  </div>
+  <div class="avatar">JH</div>
+</header>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/acl2023.jpg" alt="blind-date" width="240" height="200">
-            </td>
-            <td width="75%" valign="middle">
-                <papertitle>BUCA: A Binary Classification Approach to Unsupervised Commonsense Question Answering</papertitle>
-              <br>
-              <p><strong>Jie He</strong>, Simon Chi Lok U, Victor Gutierrez-Basulto and Jeff Z. Pan</p>
-              <em>ACL 2023</em>
-              <a href="https://arxiv.org/abs/2305.15932">[paper]</a> <a href="https://github.com/probe2/BUCA">[code]</a> 
-              <p>Unsupervised commonsense reasoning (UCR) is becoming increasingly popular as the construction of commonsense reasoning datasets is expensive, and they are inevitably limited in their scope. A popular approach to UCR is to fine-tune language models with external knowledge (e.g., knowledge graphs), but this usually requires a large number of training examples. In this paper, we propose to transform the downstream multiple choice question answering task into a simpler binary classification task by ranking all candidate answers according to their reasonableness. To this end, for training the model, we convert the knowledge graph triples into reasonable and unreasonable texts. Extensive experimental results show the effectiveness of our approach on various multiple choice question answering benchmarks. Furthermore, compared with existing UCR approaches using KGs, ours is less data hungry.</p>
-            </td>
-          </tr>
+<!-- MAIN -->
+<main>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/acl2021.png" alt="blind-date" width="200" height="240">
-            </td>
-            <td width="75%" valign="middle">
-                <papertitle>TGEA: An Error-Annotated Dataset and Benchmark Tasks for Text Generation from Pretrained Language Models</papertitle>
-              <br>
-              <p><strong>Jie He*</strong>, Bo peng*, Yi Liao, Qun Liu and Deyi Xiong</p>
-              <em>ACL 2021</em>
-              <a href="https://aclanthology.org/2021.acl-long.469.pdf">[paper]</a> <a href="https://download.mindspore.cn/dataset/TGEA/">[dataset]</a> 
-              <p>In order to deeply understand the capability of pretrained language models in text generation and conduct a diagnostic evaluation, we propose TGEA. We use carefully selected prompt words to guide GPT-2 to generate candidate sentences, from which we select 47K for error annotation. We create an error taxonomy to cover 24 types of errors occurring in these erroneous sentences according to the nature of errors with respect to linguistics and knowledge (e.g., commonsense). Each error is hence manually labeled with comprehensive annotations, including the span of the error, the associated span, minimal correction to the error, the type of the error, and rationale behind the error. Furthermore, we use TGEA as a benchmark dataset and propose a series of automatic diagnosis tasks, including error detection, error type classification, associated span detection, error rationale generation, to further promote future study on the automatic error detection and correction on texts generated by pretrained language models.</p>
-            </td>
-          </tr>
+  <!-- RESEARCH INTERESTS -->
+  <section id="research">
+    <h2 class="section-title">
+      <span class="icon">🔬</span> Research Interests
+    </h2>
+    <div class="research-grid">
+      <div class="research-card aug">
+        <h3>🔗 Augmentation</h3>
+        <p>Investigating the role of knowledge in the era of large language models, and how external knowledge sources can effectively complement parametric knowledge.</p>
+      </div>
+      <div class="research-card rea">
+        <h3>🧠 Reasoning / Agents</h3>
+        <p>Enhancing LLMs' ability to leverage external knowledge and novel tools through supervised fine-tuning (SFT) and reinforcement learning.</p>
+      </div>
+      <div class="research-card eff">
+        <h3>⚡ Efficiency</h3>
+        <p>Designing compression methods that reduce the length of external inputs, enabling models to improve efficiency without sacrificing performance.</p>
+      </div>
+      <div class="research-card mul">
+        <h3>🖼️ Multimodality</h3>
+        <p>Studying efficient training strategies for multimodal LLMs and analyzing their reasoning deficiencies.</p>
+      </div>
+    </div>
+    <p style="margin-top: 1.2rem; font-size: 0.88rem; color: var(--text-muted); line-height: 1.7;">
+      In addition, I am interested in <strong>LLM evaluation and benchmark construction</strong>,
+      particularly in designing challenging scenarios for rigorous assessment of question answering and reasoning.
+      I also proposed <strong>CLARA</strong>, one of the earliest open-source frameworks that jointly learns
+      retrieval and reasoning through latent vectors — receiving <strong>900+ GitHub stars</strong>.
+    </p>
+  </section>
 
-          <br>
+  <!-- EDUCATION -->
+  <section id="education">
+    <h2 class="section-title">
+      <span class="icon">🎓</span> Education
+    </h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div class="timeline-title">University of Edinburgh</div>
+            <div class="timeline-date">2022 – Present</div>
+          </div>
+          <div class="timeline-sub">Ph.D. in Computer Science (ILCC) · Edinburgh, UK</div>
+          <div class="timeline-desc">Advisor: Prof. Jeff Z. Pan · School of Informatics</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div class="timeline-title">Tianjin University</div>
+            <div class="timeline-date">2019 – 2022</div>
+          </div>
+          <div class="timeline-sub">M.S. in Computer Science · Tianjin, China</div>
+          <div class="timeline-desc">Advisor: Prof. Deyi Xiong · Department of Computer Science</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div class="timeline-title">Shandong University</div>
+            <div class="timeline-date">2015 – 2019</div>
+          </div>
+          <div class="timeline-sub">B.S. in Software Engineering · Shandong, China</div>
+          <div class="timeline-desc">Department of Software Engineering</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/emnlp2020.png" alt="clean-usnob" width="200" height="160">
-            </td>
-            <td width="75%" valign="middle">
+  <!-- WORK EXPERIENCE -->
+  <section id="experience">
+    <h2 class="section-title">
+      <span class="icon">💼</span> Work Experience
+    </h2>
 
-                <papertitle>The Box is in the Pen: Evaluating Commonsense Reasoning in Neural Machine Translation</papertitle>
+    <div class="company-card">
+      <div class="company-logo logo-nvidia">NVDA</div>
+      <div class="company-info">
+        <h3>NVIDIA</h3>
+        <div class="company-role">Research Intern · NVIDIA Nemo Retriever Team</div>
+        <div class="company-project">📌 Train a SOTA embedding model for reasoning agentic retrieval.</div>
+        <div class="company-date">Oct 2025 – Feb 2026 · Remote &nbsp;|&nbsp; Mentors: Yauhen Babakhin, Ronay Ak</div>
+      </div>
+    </div>
 
-              <br>
-              <p><strong>Jie He*</strong>, Tao Wang*, Deyi Xiong and Qun Liu</p>
-              <em>EMNLP 2020 finding</em>
-              <a href="https://aclanthology.org/2020.findings-emnlp.327/">[paper]</a> <a href="https://github.com/tjunlp-lab/CommonMT">[dataset]</a>
-              <p> In this paper, we present a test suite to evaluate the commonsense reasoning capability of neural machine translation. The test suite consists of three test sets, covering lexical and contextless/contextual syntactic ambiguity that requires commonsense knowledge to resolve. We manually create 1,200 triples, each of which contain a source sentence and two contrastive translations. We conduct extensive experiments on the test suite to evaluate commonsense reasoning in neural machine translation and investigate factors that have impact on this capability. Our experiments and analyses demonstrate that neural machine translation performs poorly on commonsense reasoning.</p>
-            </td>
-          </tr>
+    <div class="company-card">
+      <div class="company-logo logo-apple">AAPL</div>
+      <div class="company-info">
+        <h3>Apple</h3>
+        <div class="company-role">Research Intern · Apple MLR</div>
+        <div class="company-project">📌 Improve the retrieval and generation efficiency of LLM with latent vectors.</div>
+        <div class="company-date">Jun 2025 – Sep 2025 · Seattle, US &nbsp;|&nbsp; Mentor: Dr. Yizhe Zhang</div>
+      </div>
+    </div>
 
-          <br>
+    <div class="company-card">
+      <div class="company-logo logo-ms">MSFT</div>
+      <div class="company-info">
+        <h3>Microsoft</h3>
+        <div class="company-role">Research Intern · OAR &amp; MSR</div>
+        <div class="company-project">📌 Enhancing Tool Generalization in LLMs.</div>
+        <div class="company-date">Jul 2024 – Oct 2024 · Redmond, US &nbsp;|&nbsp; Mentors: Pei Zhou, Longqi Yang, Jennifer Neville</div>
+      </div>
+    </div>
 
+    <div class="company-card">
+      <div class="company-logo logo-apple">AAPL</div>
+      <div class="company-info">
+        <h3>Apple</h3>
+        <div class="company-role">Research Intern · Apple AI/ML</div>
+        <div class="company-project">📌 Investigating to generate rationales for knowledge-based QA without training.</div>
+        <div class="company-date">Feb 2024 – May 2024 · Seattle, US &nbsp;|&nbsp; Mentors: Yiwen Sun, Benjamin Han</div>
+      </div>
+    </div>
+  </section>
 
-        </tbody></table>
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <h2 class="section-title">
+      <span class="icon">📝</span> Publications
+      <span style="font-size:0.75rem; font-weight:400; color:var(--text-muted); margin-left:auto;">* indicates equal contribution</span>
+    </h2>
 
+    <div class="pub-item">
+      <div class="pub-num">1</div>
+      <div class="pub-content">
+        <h4>From Reflection to Sufficiency: Reinforcement-Guided Thinking Quality in Retrieval-Augmented Reasoning for LLMs</h4>
+        <div class="pub-authors"><strong>Jie He</strong>, Victor Gutierrez Basulto, Jeff Z. Pan</div>
+        <span class="pub-venue submission">In Submission</span>
+      </div>
+    </div>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Personal information</heading>
-              <p>I love philosophy. My favorite philosopher is Nietzsche, and I also enjoy reading Kant's Critique of Pure Reason. I hope to explore more studies combining linguistics and philosophy such as Wittgenstein's language games in the future.</p>
-              <p><font color="#20B2AA">  I am open to academic collaborations and please drop me an email if you are interested in collaborating with me! </font></p>
-            </td>
-          </tr>
-        </tbody></table>
+    <div class="pub-item">
+      <div class="pub-num">2</div>
+      <div class="pub-content">
+        <h4>MINTQA: A Multi-Hop Question Answering Benchmark for Evaluating LLMs on New and Tail Knowledge</h4>
+        <div class="pub-authors"><strong>Jie He</strong>*, Nan Hu*, Wanqiu Long, Jiaoyan Chen, Jeff Z. Pan</div>
+        <span class="pub-venue submission">In Submission</span>
+      </div>
+    </div>
 
+    <div class="pub-item">
+      <div class="pub-num">3</div>
+      <div class="pub-content">
+        <h4>Clara: Bridging Retrieval and Generation with Continuous Latent Reasoning</h4>
+        <div class="pub-authors"><strong>Jie He</strong>, Richard He Bai, Sinead Williamson, Jeff Z. Pan, Navdeep Jaitly, Yizhe Zhang</div>
+        <span class="pub-venue submission">In Submission</span>
+      </div>
+    </div>
 
+    <div class="pub-item">
+      <div class="pub-num">4</div>
+      <div class="pub-content">
+        <h4>GenTool: Enhancing Tool Generalization in Language Models through Zero-to-One and Weak-to-Strong Simulation</h4>
+        <div class="pub-authors"><strong>Jie He</strong>, Jennifer Neville, Mengting Wan, Longqi Yang, Hui Liu, Xiaofeng Xu, Xia Song, Jeff Z. Pan, Pei Zhou</div>
+        <span class="pub-venue">Findings of ACL 2025</span>
+      </div>
+    </div>
 
-        <table width="60%" align="center" border="0" cellspacing="0" cellpadding="20">
-                <tbody>
-                    <tr>
-                        <td style="padding:0px">
-                            <br>
-                            <br>
-                            <div>
-<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=an1OxH7o9dvs29tcBaLmZmi9l5VFKNvwS6CWT24y7Sw&cl=ffffff&w=a"></script>                                                             </div>
-                        </td>
-                    </tr>
-                </tbody>
-        </table>
+    <div class="pub-item">
+      <div class="pub-num">5</div>
+      <div class="pub-content">
+        <h4>kNN-XICL: Cross-lingual In-Context Learning with Nearest Neighbor Inference</h4>
+        <div class="pub-authors"><strong>Jie He</strong>, Simon Yu, Victor Gutierrez Basulto, Jeff Z. Pan</div>
+        <span class="pub-venue workshop">IJCNN Workshop 2025</span>
+      </div>
+    </div>
 
+    <div class="pub-item">
+      <div class="pub-num">6</div>
+      <div class="pub-content">
+        <h4>Exploring Knowledge Graph to Text Generation with Large Language Models: Techniques, Challenges, and Innovations</h4>
+        <div class="pub-authors"><strong>Jie He</strong>*, Yijun Yang*, Wanqiu Long, Victor Gutierrez Basulto, Jeff Z. Pan</div>
+        <span class="pub-venue">NAACL 2025</span>
+      </div>
+    </div>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:20px">
-                <p font-size:small;="">
-                    <br>
-                    <br>
-                    </p><div style="float:left;">
-                        Updated at Sep. 2022
-                    </div>
-                    <div style="float:right;">
-                        Thanks <a href="https://jonbarron.info">Jon Barron</a> for this amazing template
-                    </div>
-                    <br>
-                    <br>        
-                <p></p>                           
-            </td>
-          </tr>
-        </tbody></table>
+    <div class="pub-item">
+      <div class="pub-num">7</div>
+      <div class="pub-content">
+        <h4>MiCEval: Unveiling Multimodal Chain of Thought's Quality via Image Description and Reasoning Steps</h4>
+        <div class="pub-authors">Xiongtao Zhou*, <strong>Jie He</strong>*, Lanyu Chen, Jingyu Li, Haojing Chen, Victor Gutierrez Basulto, Jeff Z. Pan, Hanjie Chen</div>
+        <span class="pub-venue">NAACL 2025</span>
+      </div>
+    </div>
 
-      </td>
-    </tr>
-  </table>
+    <div class="pub-item">
+      <div class="pub-num">8</div>
+      <div class="pub-content">
+        <h4>Evaluating the Adversarial Robustness of Retrieval-Based In-Context Learning for Large Language Models</h4>
+        <div class="pub-authors">Simon Yu*, <strong>Jie He</strong>*, Pasquale Minervini, Jeff Z. Pan</div>
+        <span class="pub-venue">COLM 2024</span>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-num">9</div>
+      <div class="pub-content">
+        <h4>An Empirical Study on Parameter-Efficient Fine-Tuning for Multimodal Large Language Models</h4>
+        <div class="pub-authors">Xiongtao Zhou*, <strong>Jie He</strong>*, Yuhua Ke, Guangyao Zhu, Victor Gutierrez Basulto, Jeff Z. Pan</div>
+        <span class="pub-venue">Findings of ACL 2024</span>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-num">10</div>
+      <div class="pub-content">
+        <h4>BUCA: A Binary Classification Approach to Unsupervised Commonsense Question Answering</h4>
+        <div class="pub-authors"><strong>Jie He</strong>, Simon Yu, Victor Gutierrez Basulto, Jeff Z. Pan</div>
+        <span class="pub-venue">ACL 2023</span>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-num">11</div>
+      <div class="pub-content">
+        <h4>Instances and Labels: Hierarchy-aware Joint Supervised Contrastive Learning for Hierarchical Multi-Label Text Classification</h4>
+        <div class="pub-authors">Simon Yu*, <strong>Jie He</strong>*, Victor Gutierrez Basulto, Jeff Z. Pan</div>
+        <span class="pub-venue">Findings of EMNLP 2023</span>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-num">12</div>
+      <div class="pub-content">
+        <h4>MetaXCR: Reinforcement-Based Meta-Transfer Learning for Cross-Lingual Commonsense Reasoning</h4>
+        <div class="pub-authors"><strong>Jie He</strong>, Yu Fu</div>
+        <span class="pub-venue workshop">NeurIPS Workshop 2022</span>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-num">13</div>
+      <div class="pub-content">
+        <h4>Evaluate Discourse Cohesion in Pre-trained Language Models</h4>
+        <div class="pub-authors"><strong>Jie He</strong>, Wanqiu Long, Deyi Xiong</div>
+        <span class="pub-venue workshop">COLING Workshop 2022</span>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-num">14</div>
+      <div class="pub-content">
+        <h4>TGError: An Error-Annotated Dataset and Benchmark Tasks for Text Generation from Pretrained Language Models</h4>
+        <div class="pub-authors"><strong>Jie He</strong>*, Bo Peng*, Yi Liao, Qun Liu, Deyi Xiong</div>
+        <span class="pub-venue">ACL 2021</span>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-num">15</div>
+      <div class="pub-content">
+        <h4>The Box is in the Pen: Evaluating Commonsense Reasoning in Neural Machine Translation</h4>
+        <div class="pub-authors"><strong>Jie He</strong>*, Tao Wang*, Deyi Xiong, Qun Liu</div>
+        <span class="pub-venue">Findings of EMNLP 2020</span>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-num">16</div>
+      <div class="pub-content">
+        <h4>UniArk: A Holistic Approach to Unbiased and Consistent Factual Knowledge Extraction</h4>
+        <div class="pub-authors">Yijun Yang, <strong>Jie He</strong>, Pinzhen Chen, Victor Gutierrez Basulto, Jeff Z. Pan</div>
+        <span class="pub-venue">NAACL 2024</span>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-num">17</div>
+      <div class="pub-content">
+        <h4>Similarity-Based Domain Adaptation with LLMs for Cross-Domain Sentiment Classification</h4>
+        <div class="pub-authors"><strong>Jie He</strong>, Wendi Zhou, Xiang Lorraine Li, Jeff Z. Pan</div>
+        <span class="pub-venue submission">Preprint</span>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-num">18</div>
+      <div class="pub-content">
+        <h4>Meta-RTL: Reinforcement-Based Meta-Transfer Learning for Low-Resource Commonsense Reasoning</h4>
+        <div class="pub-authors">Yu Fu*, <strong>Jie He</strong>*, Yifang Yang, Qun Liu, Deyi Xiong</div>
+        <span class="pub-venue submission">Preprint</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section id="awards">
+    <h2 class="section-title">
+      <span class="icon">🏆</span> Honors &amp; Awards
+    </h2>
+    <div class="awards-list">
+      <div class="award-item">
+        <div class="award-icon">🍎</div>
+        <div>
+          <div class="award-name">Apple Scholars in AI/ML PhD Fellowship</div>
+          <div class="award-period">2024 – 2026</div>
+        </div>
+      </div>
+      <div class="award-item">
+        <div class="award-icon">🎓</div>
+        <div>
+          <div class="award-name">PhD Scholarship, School of Informatics, University of Edinburgh</div>
+          <div class="award-period">Oct 2022 – Sep 2025</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACADEMIC SERVICES -->
+  <section id="services">
+    <h2 class="section-title">
+      <span class="icon">🤝</span> Academic Services
+    </h2>
+    <div class="service-group">
+      <h3>Reviewer</h3>
+      <div class="tag-list">
+        <span class="tag">AACL 2022, 2023</span>
+        <span class="tag">SIGDIAL 2023</span>
+        <span class="tag">EMNLP 2023</span>
+        <span class="tag">EACL 2024</span>
+        <span class="tag">NAACL 2024</span>
+        <span class="tag">ACL 2024</span>
+        <span class="tag">ARR 2023.10–now</span>
+        <span class="tag">COLM 2024</span>
+        <span class="tag">ICLR 2025</span>
+        <span class="tag">COLING 2025</span>
+      </div>
+    </div>
+    <div class="service-group">
+      <h3>Area Chair</h3>
+      <div class="tag-list">
+        <span class="tag">EMNLP 2024</span>
+        <span class="tag">ARR 2024.06–now</span>
+      </div>
+    </div>
+    <div class="service-group">
+      <h3>Teaching</h3>
+      <div class="tag-list">
+        <span class="tag">Tutor · Knowledge Graph · University of Edinburgh · Fall 2023</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Jie He · University of Edinburgh · <a href="mailto:j.he@ed.ac.uk" style="color:var(--primary);text-decoration:none;">j.he@ed.ac.uk</a></p>
+  <p style="margin-top:0.4rem;color:#94a3b8;">Last updated: March 2026</p>
+</footer>
+
+<script>
+  // Active nav highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 90) {
+        current = sec.getAttribute('id');
+      }
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--primary)' : '';
+    });
+  });
+</script>
+
 </body>
-
 </html>
-
-
-
-
-
