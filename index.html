@@ -430,7 +430,28 @@
       <span class="icon">📝</span> Publications
       <span style="font-size:0.75rem;font-weight:400;color:var(--text-muted);margin-left:auto;">* indicates equal contribution</span>
     </h2>
-    
+
+    <div class="pub-item">
+      <div class="pub-thumb"><img src="images/clara.png" alt="MintQA" /></div>
+      <div class="pub-content">
+        <h4>CLaRa: Bridging Retrieval and Generation with Continuous Latent Reasoning</h4>
+        <div class="pub-authors"><strong>Jie He</strong>*, Richard He Bai, Sinead Williamson, Jeff Z. Pan, Navdeep Jaitly, Yizhe Zhang </div>
+        <div class="pub-meta">
+          <span class="pub-venue">COLM 2026</span>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2511.18659/" class="pub-link" target="_blank">[paper]</a>
+            <a href="https://github.com/apple/ml-clara" class="pub-link" target="_blank">[code]</a>
+          </div>
+        </div>
+        <button class="toggle-abstract" onclick="toggleAbstract(this)">▶ Show abstract</button>
+        <div class="pub-abstract">  Retrieval-augmented generation (RAG) enhances large language models (LLMs) with external knowledge but still suffers from long contexts and disjoint retrieval–generation optimization. In this work, we propose CLaRa (Continuous Latent Reasoning), a unified framework that performs embedding-based compression and joint optimization in a shared continuous space. To obtain semantically rich and retrievable compressed vectors, thereby reducing the document length fed into the generator, we introduce SCP, a key-preserving data synthesis framework based on question-answering and paraphrase supervision. CLaRa then trains the reranker and generator end-to-end via a single language modeling loss, with gradients
+flowing through both modules using a differentiable top-k estimator. Theoretically, this unified optimization aligns retrieval
+relevance with answer quality. Experiments across multiple QA benchmarks show that CLaRa achieves state-of-the-art
+compression and reranking performance, even at a text compression rate of 16, outperforming text-based fine-tuned
+baselines. </div>
+      </div>
+    </div>
+
     <!-- 0 -->
     <div class="pub-item">
       <div class="pub-thumb"><img src="images/mintqa.png" alt="MintQA" /></div>
